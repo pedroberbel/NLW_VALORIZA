@@ -34,7 +34,7 @@ class AuthenticateUserService {
         const token = sign({
             email:user.email
         },
-            "d97f56059d846da13126cd2eabe3657b", //https://www.md5hashgenerator.com/     --- // https://jwt.io/
+            "d97f56059d846da13126cd2eabe3657b", //https://www.md5hashgenerator.com/     // ---  https://jwt.io/
         {
             subject:user.id,
             expiresIn: "1d" //1 dia
