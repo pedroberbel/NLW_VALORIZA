@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLW - Valoriza</title>
+</head>
+<body>
+    <h1>HTML Simples para acessar a API</h1>
+    <form>
+        <!-- <input type="email" id="userEmail" name="userEmail" placeholder="e-mail">
+        <input type="password" id="userPassword" name="userPassword" placeholder=""> -->
+        <button type="button" onclick="getUsers()">GET USERS</button>
+    </form>
+
+    <script>
+        function getUsers(){
+            // var user = document.getElementById("userEmail").value;
+            // var password = document.getElementById("userPassword").value;
+
+            var arrayBuffer = new ArrayBuffer();
+            
+            var request = new XMLHttpRequest();
+            request.open('GET', '/users')
+            
+            request.setRequestHeader("Authorization","Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvY2FAZW1haWwuY29tIiwiaWF0IjoxNjI0NjI3MDUwLCJleHAiOjE2MjQ3MTM0NTAsInN1YiI6ImRhY2JkMjRlLTEyODItNDk0MC05YWFhLThhNjFjMThhYTU3YyJ9.PZc3b8yip5DFBH5Y4A6nV3b-4feLtmy0lsfw2AObamo")
+
+            request.responseType = 'json';
+            
+            request.send();
+
+            request.onload = function(){
+                console.log(request.response)
+            }
+            
+        }
+    </script>
+</body>
+</html>

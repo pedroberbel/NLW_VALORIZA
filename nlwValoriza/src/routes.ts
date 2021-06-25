@@ -33,4 +33,11 @@ router.get("/users/compliments/send", ensureAutenticated, listUserSendCompliment
 router.get("/users/compliments/receive", ensureAutenticated, listUserReceiveComplimentsController.handle)
 router.get("/tags", ensureAutenticated,  listTagsController.handle)
 router.get("/users", ensureAutenticated, listUsersController.handle)
+
+//Rotas html
+router.get("/", (req,res) => {
+    res.sendFile(__dirname+ "/html/index.html");
+})
+
+
 export { router };

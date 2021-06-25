@@ -3,11 +3,13 @@ import "reflect-metadata";
 import "express-async-errors";
 import { router } from "./routes"
 import "./database";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
 
+app.use(cors())
 app.use(router); //funciona como um middleware - para inserir as rotas dentro do express
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
